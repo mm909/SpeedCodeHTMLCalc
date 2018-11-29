@@ -12,7 +12,7 @@
       var exp = document.form.textview.value;
       document.form.textview.value = exp.substring(0,exp.length-1)
     }
-    function clean() {
+    function c() {
       document.form.textview.value ="";
     }
     function equal() {
@@ -21,6 +21,162 @@
         document.form.textview.value = eval(val)
       }
     }
+
+    document.addEventListener('keydown', (e) => {
+      switch (e.which) {
+          case 96:
+          // 0
+          insert(0)
+          document.getElementById('0').style.background = "rgba(75,179,219,1)"
+          break;
+          case 97:
+          // 1
+          insert(1)
+          document.getElementById('1').style.background = "rgba(75,179,219,1)"
+          break;
+          case 98:
+          // 2
+          insert(2)
+          document.getElementById('2').style.background = "rgba(75,179,219,1)"
+          break;
+          case 99:
+          // 3
+          insert(3)
+          document.getElementById('3').style.background = "rgba(75,179,219,1)"
+          break;
+          case 100:
+          // 4
+          insert(4)
+          document.getElementById('4').style.background = "rgba(75,179,219,1)"
+          break;
+          case 101:
+          // 5
+          insert(5)
+          document.getElementById('5').style.background = "rgba(75,179,219,1)"
+          break;
+          case 102:
+          // 6
+          insert(6)
+          document.getElementById('6').style.background = "rgba(75,179,219,1)"
+          break;
+          case 103:
+          // 7
+          insert(7)
+          document.getElementById('7').style.background = "rgba(75,179,219,1)"
+          break;
+          case 104:
+          // 8
+          insert(8)
+          document.getElementById('8').style.background = "rgba(75,179,219,1)"
+          break;
+          case 105:
+          // 9
+          insert(9)
+          document.getElementById('9').style.background = "rgba(75,179,219,1)"
+          break;
+          case 107:
+          // +
+          insert('+')
+          document.getElementById('+').style.background = "rgba(75,179,219,1)"
+          break;
+          case 109:
+          // -
+          insert('-')
+          document.getElementById('-').style.background = "rgba(75,179,219,1)"
+          break;
+          case 106:
+          // *
+          insert('*')
+          document.getElementById('*').style.background = "rgba(75,179,219,1)"
+          break;
+          case 111:
+          // /
+          insert('/')
+          document.getElementById('/').style.background = "rgba(75,179,219,1)"
+          break;
+          case 110:
+          // .
+          insert('.')
+          document.getElementById('.').style.background = "rgba(75,179,219,1)"
+          break;
+          case 13:
+          // Enter
+          document.getElementById('=').style.background = "rgba(75,179,219,1)"
+          equal();
+          break;
+          case 8:
+          // back
+          document.getElementById('<').style.background = "rgba(75,179,219,1)"
+          back();
+          break;
+          case 46:
+          // back
+          document.getElementById('c').style.background = "rgba(75,179,219,1)"
+          c();
+          break;
+          default:
+      }
+    })
+
+    document.addEventListener('keyup', (e) => {
+      switch (e.which) {
+          case 96:
+          document.getElementById('0').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 97:
+          document.getElementById('1').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 98:
+          document.getElementById('2').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 99:
+          document.getElementById('3').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 100:
+          document.getElementById('4').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 101:
+          document.getElementById('5').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 102:
+          document.getElementById('6').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 103:
+          document.getElementById('7').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 104:
+          document.getElementById('8').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 105:
+          document.getElementById('9').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 107:
+          document.getElementById('+').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 109:
+          document.getElementById('-').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 106:
+          document.getElementById('*').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 111:
+          document.getElementById('/').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 110:
+          document.getElementById('.').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 13:
+          document.getElementById('=').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 8:
+          document.getElementById('<').style.background = "rgba(95,199,239,.90)"
+          break;
+          case 46:
+          document.getElementById('c').style.background = "rgba(95,199,239,.90)"
+          break;
+          default:
+      }
+    })
   </script>
 
   <style>
@@ -67,32 +223,32 @@
       </form>
       <table>
       <tr>
-        <td><input class="button" type="button" onclick="clean()" value="C"></td>
-        <td><input class="button" type="button" onclick="back()" value="<"></td>
-        <td><input class="button" type="button" onclick="insert('/')" value="/"></td>
-        <td><input class="button" type="button" onclick="insert('*')" value="*"></td>
+        <td><input id="c" class="button" type="button" onclick="c()" value="C"></td>
+        <td><input id="<" class="button" type="button" onclick="back()" value="<"></td>
+        <td><input id="/" class="button" type="button" onclick="insert('/')" value="/"></td>
+        <td><input id="*" class="button" type="button" onclick="insert('*')" value="*"></td>
       </tr>
       <tr>
-        <td><input class="button" type="button" onclick="insert(1)" value="1"></td>
-        <td><input class="button" type="button" onclick="insert(2)" value="2"></td>
-        <td><input class="button" type="button" onclick="insert(3)" value="3"></td>
-        <td><input class="button" type="button" onclick="insert('+')" value="+"></td>
+        <td><input id="1" class="button" type="button" onclick="insert(1)" value="1"></td>
+        <td><input id="2" class="button" type="button" onclick="insert(2)" value="2"></td>
+        <td><input id="3" class="button" type="button" onclick="insert(3)" value="3"></td>
+        <td><input id="+" class="button" type="button" onclick="insert('+')" value="+"></td>
       </tr>
       <tr>
-        <td><input class="button" type="button" onclick="insert(4)" value="4"></td>
-        <td><input class="button" type="button" onclick="insert(5)" value="5"></td>
-        <td><input class="button" type="button" onclick="insert(6)" value="6"></td>
-        <td><input class="button" type="button" onclick="insert('-')" value="-"></td>
+        <td><input id="4" class="button" type="button" onclick="insert(4)" value="4"></td>
+        <td><input id="5" class="button" type="button" onclick="insert(5)" value="5"></td>
+        <td><input id="6" class="button" type="button" onclick="insert(6)" value="6"></td>
+        <td><input id="-" class="button" type="button" onclick="insert('-')" value="-"></td>
       </tr>
       <tr>
-        <td><input class="button" type="button" onclick="insert(7)" value="7"></td>
-        <td><input class="button" type="button" onclick="insert(8)" value="8"></td>
-        <td><input class="button" type="button" onclick="insert(9)" value="9"></td>
-        <td rowspan="5"><input style="height:102px" class="button" type="button" onclick="equal()" value="="></td>
+        <td><input id="7" class="button" type="button" onclick="insert(7)" value="7"></td>
+        <td><input id="8" class="button" type="button" onclick="insert(8)" value="8"></td>
+        <td><input id="9" class="button" type="button" onclick="insert(9)" value="9"></td>
+        <td rowspan="5"><input style="height:102px" id="=" class="button" type="button" onclick="equal()" value="="></td>
       </tr>
       <tr>
-        <td colspan="2"><input style="width:102px" class="button" type="button" onclick="insert(0)" value="0"></td>
-        <td><input class="button" type="button" onclick="insert('.')" value="."></td>
+        <td colspan="2"><input style="width:102px" id="0" class="button" type="button" onclick="insert(0)" value="0"></td>
+        <td><input id="." class="button" type="button" onclick="insert('.')" value="."></td>
       </table>
     </div>
   </body>
