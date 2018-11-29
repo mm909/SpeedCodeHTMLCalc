@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>HTML Calc</title>
-  </head>
 
-  <script>
-    function insert(num) {
+<head>
+  <title>HTML Calc</title>
+</head>
+
+<script>
+  function insert(num) {
       document.form.textview.value = document.form.textview.value + num
     }
     function back() {
@@ -179,10 +180,16 @@
     })
   </script>
 
-  <style>
-    * {
+<style>
+  * {
       margin: 0px;
       padding: 0px;
+    }
+    .main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%)
     }
     .button {
       width: 50px;
@@ -203,25 +210,18 @@
       font-size: 25;
       padding: 5px;
     }
-    .main {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%)
-    }
     html {
       background: linear-gradient(#e66465, #9198e5)!important;
       height:100%;
     }
   </style>
 
-  <body>
-    <div class="bg"></div>
-    <div class="main">
-      <form name="form">
-        <input class="textview" name="textview" type="text">
-      </form>
-      <table>
+<body>
+  <div class="main">
+    <form name="form">
+      <input class="textview" name="textview" type="text">
+    </form>
+    <table>
       <tr>
         <td><input id="c" class="button" type="button" onclick="c()" value="C"></td>
         <td><input id="<" class="button" type="button" onclick="back()" value="<"></td>
@@ -249,7 +249,8 @@
       <tr>
         <td colspan="2"><input style="width:102px" id="0" class="button" type="button" onclick="insert(0)" value="0"></td>
         <td><input id="." class="button" type="button" onclick="insert('.')" value="."></td>
-      </table>
-    </div>
-  </body>
+    </table>
+  </div>
+</body>
+
 </html>
